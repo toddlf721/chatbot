@@ -1,0 +1,749 @@
+
+.profile {
+  width: 100%;
+}
+.profile-container {
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+.profile-header {
+  display: flex;
+  margin-bottom: 44px;
+}
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  margin-right: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-green-light);
+}
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-info {
+  flex: 1;
+}
+.profile-header-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.profile-username {
+  font-size: 28px;
+  font-weight: 300;
+  margin-right: 20px;
+  color: var(--text-dark);
+}
+.profile-buttons {
+  display: flex;
+}
+.friend-button, .message-button, .edit-profile-button {
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.friend-button {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+}
+.friend-button.following {
+  background-color: var(--hover-light);
+  color: var(--primary-green-dark);
+  border: 1px solid var(--primary-green-light);
+}
+.friend-button:hover {
+  background-color: var(--primary-green-dark);
+}
+.friend-button.following:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  border-color: #f44336;
+}
+.message-button, .edit-profile-button {
+  background-color: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+}
+.message-button:hover, .edit-profile-button:hover {
+  background-color: var(--hover-light);
+  border-color: var(--primary-green);
+}
+.profile-stats {
+  display: flex;
+  margin-bottom: 20px;
+}
+.stat-item {
+  margin-right: 40px;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+.stat-item span {
+  font-weight: 600;
+}
+.profile-bio {
+  max-width: 400px;
+}
+.profile-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-dark);
+}
+.profile-bio-text {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.4;
+  word-break: break-word;
+}
+.profile-bio-text a {
+  color: #0066cc;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+.profile-bio-text a:hover {
+  color: #004c99;
+}
+.profile-website {
+  font-size: 14px;
+  color: var(--primary-green-dark);
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.profile-website:hover {
+  text-decoration: underline;
+}
+.profile-tabs {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--border-light);
+  margin-bottom: 20px;
+}
+.profile-tab {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 20px;
+  margin-right: 60px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark); 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-top: 1px solid transparent;
+  margin-top: -1px;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.profile-tab i {
+  margin-right: 6px;
+  color: var(--text-light);
+}
+.profile-tab.active {
+  color: var(--primary-green-dark);
+  border-top: 1px solid var(--primary-green);
+}
+.profile-tab.active i {
+  color: var(--primary-green-dark);
+}
+.profile-tab:hover {
+  color: var(--primary-green);
+}
+.profile-tab:hover i {
+  color: var(--primary-green);
+}
+/* 프로필 탭 뱃지 스타일 */
+.profile-tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background-color: var(--primary-green);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+.profile-content {
+  width: 100%;
+}
+/* 게시물 컨테이너 - 중앙 정렬 */
+.profile-posts-container, 
+.profile-boards-container {
+  width: 100%;
+}
+/* 서브탭 스타일 */
+.posts-subtabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 10px;
+}
+.posts-subtab {
+  padding: 8px 16px;
+  margin: 0 5px;
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.posts-subtab:hover {
+  background-color: var(--hover-light);
+  color: var(--primary-green-dark);
+}
+.posts-subtab.active {
+  background-color: var(--hover-light);
+  color: var(--primary-green-dark);
+  font-weight: 600;
+}
+/* 서브탭 뱃지 스타일 */
+.subtab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background-color: var(--primary-green);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+.profile-posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.profile-post-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+.profile-post-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.profile-post-item:hover img {
+  transform: scale(1.05);
+}
+.profile-post-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(126, 217, 87, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.profile-post-item:hover .profile-post-overlay {
+  opacity: 1;
+}
+.profile-post-stats {
+  display: flex;
+  gap: 20px;
+}
+.post-stat {
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.post-stat i {
+  margin-right: 6px;
+}
+/* 컨텍스트 메뉴 스타일 */
+.context-menu {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  overflow: hidden;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+  border: 1px solid var(--border-light);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.context-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.context-menu-title {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  background-color: var(--hover-light);
+  border-bottom: 1px solid var(--border-light);
+}
+.context-menu-item {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+.context-menu-item i {
+  margin-right: 8px;
+  width: 20px;
+  color: var(--primary-green);
+  text-align: center;
+}
+.context-menu-item:hover {
+  background-color: var(--hover-light);
+  color: var(--primary-green-dark);
+}
+/* 학습 공간 스타일 */
+.profile-study-container {
+  margin-top: 20px;
+}
+.study-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+.study-post-card {
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-light);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+.study-post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(126, 217, 87, 0.2);
+  border-color: var(--primary-green-light);
+}
+.study-post-image {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.study-post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.study-post-card:hover .study-post-image img {
+  transform: scale(1.05);
+}
+.study-post-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.study-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.study-post-tag {
+  color: var(--primary-green-dark);
+  font-size: 14px;
+  font-weight: 500;
+}
+.study-post-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+.study-post-excerpt {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 16px;
+  line-height: 1.4;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.study-post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.study-post-author {
+  display: flex;
+  align-items: center;
+}
+.study-post-author img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid var(--border-light);
+}
+.study-post-author span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.study-post-date {
+  font-size: 12px;
+  color: var(--text-light);
+}
+.create-content-btn {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: background-color 0.2s ease;
+}
+.create-content-btn:hover {
+  background-color: var(--primary-green-dark);
+}
+.create-content-btn i {
+  margin-right: 8px;
+}
+/* 비어있는 탭 스타일 */
+.profile-empty-tab {
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.empty-tab-message {
+  text-align: center;
+  padding: 20px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty-icon {
+  font-size: 48px;
+  color: var(--primary-green-light);
+  margin-bottom: 16px;
+  background-color: var(--hover-light);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.empty-tab-message h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+.empty-tab-message p {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.profile-loading {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: var(--text-light);
+}
+/* 프로필 에러 페이지 */
+.profile-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+.error-container {
+  text-align: center;
+  padding: 40px;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-light);
+}
+.error-container i {
+  font-size: 48px;
+  color: #f44336;
+  margin-bottom: 16px;
+}
+.error-container h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+.error-container p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+.error-container .btn-primary {
+  margin-top: 10px;
+}
+/* 다크모드 스타일 */
+.dark-mode .profile-username,
+.dark-mode .profile-name,
+.dark-mode .stat-item,
+.dark-mode .study-post-title,
+.dark-mode .empty-tab-message h3,
+.dark-mode .study-post-author span,
+.dark-mode .profile-tab,
+.dark-mode .posts-subtab,
+.dark-mode .context-menu-title,
+.dark-mode .context-menu-item,
+.dark-mode .error-container h2 {
+  color: var(--hover-light);
+}
+.dark-mode .message-button, 
+.dark-mode .edit-profile-button {
+  color: var(--hover-light);
+}
+.dark-mode .profile-bio-text,
+.dark-mode .profile-tab i,
+.dark-mode .study-post-excerpt,
+.dark-mode .study-post-date,
+.dark-mode .empty-tab-message p,
+.dark-mode .error-container p {
+  color: var(--primary-green-light);
+}
+.dark-mode .profile-avatar {
+  border-color: var(--primary-green);
+}
+.dark-mode .profile-tabs,
+.dark-mode .posts-subtabs {
+  border-color: var(--dark-border);
+}
+.dark-mode .profile-tab.active {
+  color: var(--primary-green);
+  border-top-color: var(--primary-green);
+}
+.dark-mode .profile-tab.active i {
+  color: var(--primary-green);
+}
+.dark-mode .posts-subtab:hover,
+.dark-mode .posts-subtab.active {
+  background-color: rgba(126, 217, 87, 0.15);
+  color: var(--primary-green-light);
+}
+.dark-mode .message-button,
+.dark-mode .edit-profile-button {
+  border-color: var(--dark-border);
+  color: var(--hover-light);
+}
+.dark-mode .message-button:hover,
+.dark-mode .edit-profile-button:hover {
+  background-color: rgba(126, 217, 87, 0.15);
+  border-color: var(--primary-green);
+}
+.dark-mode .profile-website {
+  color: var(--primary-green-light);
+}
+.dark-mode .profile-post-item {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+}
+.dark-mode .study-post-card {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.dark-mode .study-post-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary-green);
+}
+.dark-mode .study-post-tag {
+  color: var(--primary-green);
+}
+.dark-mode .study-post-author img {
+  border-color: var(--dark-border);
+}
+.dark-mode .empty-icon {
+  background-color: rgba(126, 217, 87, 0.15);
+}
+.dark-mode .context-menu {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.dark-mode .context-menu-title {
+  background-color: rgba(126, 217, 87, 0.15);
+  border-color: var(--dark-border);
+}
+.dark-mode .context-menu-item:hover {
+  background-color: rgba(126, 217, 87, 0.2);
+  color: var(--primary-green);
+}
+.dark-mode .error-container {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+}
+/* 팔로우 버튼 다크모드 스타일 */
+.dark-mode .friend-button.following {
+  background-color: rgba(126, 217, 87, 0.15);
+  color: var(--primary-green-light);
+  border-color: var(--primary-green);
+}
+.dark-mode .friend-button.following:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+@media (max-width: 935px) {
+  .study-post-card {
+    flex-direction: column;
+  }
+  
+  .study-post-image {
+    width: 100%;
+    height: 200px;
+  }
+}
+@media (max-width: 735px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-avatar {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .profile-header-top {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .profile-username {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .profile-stats {
+    justify-content: center;
+  }
+  
+  .profile-bio {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .profile-posts {
+    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .profile-tab {
+    padding: 0 10px;
+    margin-right: 0;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .context-menu {
+    width: 180px;
+  }
+}
+@media (max-width: 480px) {
+  .profile-posts {
+    grid-template-columns: 1fr;
+  }
+  
+  .posts-subtabs {
+    flex-wrap: wrap;
+  }
+  
+  .posts-subtab {
+    margin-bottom: 5px;
+  }
+}
+
+/* 카테고리 이름 수정 관련 스타일 */
+.category-name {
+  cursor: context-menu;
+  transition: color 0.2s;
+}
+.category-name:hover {
+  color: #007bff;
+}
+.category-name-editor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.category-name-input {
+  width: 80px;
+  padding: 2px 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #ffffff;
+  margin-right: 4px;
+}
+
+/* 클릭 가능한 팔로워/팔로잉 스타일 */
+.stat-item.stat-interactive {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.stat-item.stat-interactive:hover {
+  color: #1da1f2;
+}
+
+.stat-item.stat-interactive:hover span {
+  text-decoration: underline;
+}

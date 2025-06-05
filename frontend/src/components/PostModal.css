@@ -1,0 +1,1003 @@
+.post-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(2px);
+}
+
+.post-modal-container {
+  position: relative; /* 네비게이션 버튼 위치의 기준점 */
+  display: flex;
+  max-width: 1100px;
+  width: 95%;
+  height: 90vh;
+  max-height: 700px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.post-modal-close {
+  display: none;
+}
+
+.post-modal-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.post-modal-image {
+  width: 60%;
+  max-height: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-modal-image img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.post-modal-details {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--border-light);
+  background-color: white;
+}
+
+.post-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+}
+
+.post-user {
+  display: flex;
+  align-items: center;
+}
+
+.post-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  border: 2px solid var(--hover-light);
+}
+
+.post-user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-username {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.options-container {
+  position: relative;
+}
+
+.post-options {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--text-light);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.post-options:hover {
+  background-color: var(--hover-light);
+  color: var(--primary-green);
+}
+
+.post-options-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  overflow: hidden;
+  width: 180px;
+  border: 1px solid var(--border-light);
+}
+
+.options-item {
+  width: 100%;
+  padding: 12px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+}
+
+.options-item i {
+  margin-right: 8px;
+  font-size: 14px;
+  width: 16px;
+  color: var(--text-light);
+}
+
+.options-item:last-child {
+  border-bottom: none;
+}
+
+.options-item:hover {
+  background-color: var(--hover-light);
+}
+
+.options-item.delete {
+  color: #f44336;
+}
+
+.options-item.delete i {
+  color: #f44336;
+}
+
+.options-item.delete:hover {
+  background-color: #ffebee;
+}
+
+.post-modal-comments {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.post-modal-caption {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.comment-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.post-text {
+  font-size: 15px;
+  margin: 8px 0;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.hashtags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.hashtag {
+  color: var(--primary-green-dark);
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hashtag:hover {
+  text-decoration: underline;
+}
+
+.comment-time {
+  font-size: 10px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+.post-modal-comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-modal-comment {
+  display: flex;
+  align-items: flex-start;
+}
+
+.post-modal-actions {
+  padding: 16px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.post-actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+}
+
+.post-actions-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.post-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.post-action-btn:hover {
+  color: var(--primary-green);
+}
+
+.post-action-btn.liked i {
+  color: var(--primary-green);
+}
+
+.post-action-btn.saved i {
+  color: var(--primary-green);
+}
+
+/* 좋아요, 댓글 수 스타일 */
+.likes-count, .comments-count {
+  margin-left: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.post-modal-timestamp {
+  color: var(--text-light);
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.post-comment-form {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  gap: 10px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 8px;
+  min-height: 48px;
+}
+
+.comment-user-avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.comment-user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-comment-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 14px;
+  padding: 8px;
+  min-width: 0;
+}
+
+.post-comment-button {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-green);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  min-width: 60px;
+}
+
+/* 게시물 수정 스타일 */
+.post-edit-content {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.post-edit-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-dark);
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.post-edit-textarea:focus {
+  border-color: var(--primary-green);
+  outline: none;
+}
+
+/* 태그 입력 스타일 */
+.tags-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 8px;
+  min-height: 46px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  background-color: var(--hover-light);
+  color: var(--primary-green-dark);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tag-text {
+  margin-right: 6px;
+}
+
+.tag-remove {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.tag-remove:hover {
+  color: var(--primary-green-dark);
+}
+
+.tags-input input {
+  flex: 1;
+  min-width: 100px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 6px 0;
+  color: var(--text-dark);
+  background-color: transparent;
+}
+
+.post-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.post-edit-cancel,
+.post-edit-save {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.post-edit-cancel {
+  background-color: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-light);
+}
+
+.post-edit-cancel:hover {
+  background-color: var(--hover-light);
+  color: var(--text-dark);
+}
+
+.post-edit-save {
+  background-color: var(--primary-green);
+  border: none;
+  color: white;
+}
+
+.post-edit-save:hover {
+  background-color: var(--primary-green-dark);
+}
+
+/* 이전/다음 게시물 이동 버튼 */
+.post-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: #333;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 3000; /* 높은 z-index 값 */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.post-modal-nav:hover {
+  background-color: var(--primary-green);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.post-modal-nav.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.post-modal-prev {
+  left: -20px; /* 컨테이너 밖으로 좀 삐져나오게 */
+}
+
+.post-modal-next {
+  right: -20px; /* 컨테이너 밖으로 좀 삐져나오게 */
+}
+
+/* 다크모드 스타일 */
+.dark-mode .post-modal-container {
+  background-color: var(--dark-element);
+}
+
+.dark-mode .post-modal-details {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .post-modal-header,
+.dark-mode .post-modal-caption,
+.dark-mode .post-comment-form,
+.dark-mode .post-modal-actions {
+  border-color: var(--dark-border);
+}
+
+.dark-mode .post-username,
+.dark-mode .post-text,
+.dark-mode .post-modal-likes,
+.dark-mode .options-item,
+.dark-mode .likes-count,
+.dark-mode .comments-count {
+  color: var(--hover-light);
+}
+
+.dark-mode .hashtag {
+  color: var(--primary-green);
+}
+
+.dark-mode .hashtag:hover {
+  opacity: 0.8;
+}
+
+.dark-mode .post-options,
+.dark-mode .post-action-btn,
+.dark-mode .comment-time,
+.dark-mode .post-modal-timestamp,
+.dark-mode .options-item i {
+  color: var(--primary-green-light);
+}
+
+.dark-mode .post-options:hover {
+  background-color: var(--dark-border);
+}
+
+.dark-mode .post-action-btn:hover {
+  color: var(--primary-green);
+}
+
+.dark-mode .post-options-dropdown {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .options-item {
+  border-color: var(--dark-border);
+}
+
+.dark-mode .options-item:hover {
+  background-color: var(--dark-border);
+}
+
+.dark-mode .options-item.delete:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+.dark-mode .post-comment-input {
+  color: var(--hover-light);
+}
+
+.dark-mode .post-comment-input::placeholder {
+  color: rgba(233, 247, 224, 0.6);
+}
+
+.dark-mode .post-comment-button {
+  color: #fff;
+}
+
+.dark-mode .post-edit-textarea,
+.dark-mode .tags-input {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+  color: var(--hover-light);
+}
+
+.dark-mode .tags-input input {
+  color: var(--hover-light);
+  background-color: transparent;
+}
+
+.dark-mode .tag {
+  background-color: rgba(126, 217, 87, 0.15);
+  color: var(--primary-green-light);
+}
+
+.dark-mode .post-edit-cancel {
+  color: var(--primary-green-light);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .post-edit-cancel:hover {
+  background-color: rgba(126, 217, 87, 0.15);
+  color: var(--hover-light);
+}
+
+.dark-mode .post-modal-nav {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .post-modal-nav:hover {
+  background-color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+  .post-modal-container {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    max-height: none;
+    border-radius: 0;
+  }
+  
+  .post-modal-image,
+  .post-modal-details {
+    width: 100%;
+  }
+  
+  .post-modal-image {
+    height: 50%;
+  }
+  
+  .post-modal-details {
+    height: 50%;
+    border-left: none;
+    border-top: 1px solid var(--border-light);
+  }
+  
+  .post-modal-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .post-modal-prev {
+    left: 10px;
+  }
+  
+  .post-modal-next {
+    right: 10px;
+  }
+
+  .post-comment-form {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .comment-user-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .post-comment-input {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  .post-comment-button {
+    padding: 6px 12px;
+    font-size: 13px;
+    min-width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-comment-form {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .post-comment-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+/* PostModal.css에 추가할 모달에서의 이미지 수정 관련 스타일 */
+
+.modal-edit-image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.modal-edit-image-current {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-edit-image-current img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal-edit-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-edit-image-current:hover .modal-edit-image-overlay {
+  opacity: 1;
+}
+
+.modal-change-image-btn {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-change-image-btn:hover {
+  background-color: var(--primary-green);
+}
+
+.modal-change-image-btn i {
+  font-size: 18px;
+}
+
+.modal-edit-image-preview {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-edit-image-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal-edit-image-preview .remove-edit-image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.modal-edit-image-preview .remove-edit-image:hover {
+  background-color: #f44336;
+}
+
+/* 다크모드 스타일 */
+.dark-mode .modal-change-image-btn {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--hover-light);
+}
+
+.dark-mode .modal-change-image-btn:hover {
+  background-color: var(--primary-green);
+  color: white;
+}
+
+/* PostModal.css에 추가할 댓글 수정 관련 스타일 */
+
+.comment-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.comment-edit-btn,
+.comment-delete-btn {
+  background: none;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.comment-edit-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--primary-green);
+}
+
+.comment-delete-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #f44336;
+}
+
+.comment-edit-form {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.comment-edit-textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--text-dark);
+  resize: vertical;
+  margin-bottom: 8px;
+}
+
+.comment-edit-textarea:focus {
+  border-color: var(--primary-green);
+  outline: none;
+}
+
+.comment-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.comment-edit-cancel,
+.comment-edit-save {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.comment-edit-cancel {
+  background-color: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-light);
+}
+
+.comment-edit-cancel:hover {
+  background-color: var(--hover-light);
+  color: var(--text-dark);
+}
+
+.comment-edit-save {
+  background-color: var(--primary-green);
+  border: none;
+  color: white;
+}
+
+.comment-edit-save:hover {
+  background-color: var(--primary-green-dark);
+}
+
+.comment-edit-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 다크모드 스타일 */
+.dark-mode .comment-edit-textarea {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+  color: var(--hover-light);
+}
+
+.dark-mode .comment-edit-btn, 
+.dark-mode .comment-delete-btn {
+  color: var(--primary-green-light);
+}
+
+.dark-mode .comment-edit-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-green);
+}
+
+.dark-mode .comment-delete-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ff6b6b;
+}
+
+.dark-mode .comment-edit-cancel {
+  color: var(--primary-green-light);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .comment-edit-cancel:hover {
+  background-color: rgba(126, 217, 87, 0.15);
+  color: var(--hover-light);
+}
+
+.post-modal-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal-image-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.2s;
+  z-index: 2;
+}
+
+.modal-image-nav-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.modal-image-nav-button.prev {
+  left: 20px;
+}
+
+.modal-image-nav-button.next {
+  right: 20px;
+}
+
+.modal-image-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.modal-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.2s;
+}
+
+.modal-indicator-dot.active {
+  background: white;
+}

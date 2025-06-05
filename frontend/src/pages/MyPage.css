@@ -1,0 +1,1020 @@
+.mypage {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  background-color: var(--background-light);
+}
+
+.mypage-container {
+  max-width: 975px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: flex;
+  gap: 30px;
+}
+
+/* 사이드바 스타일 */
+.mypage-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.sidebar-profile {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-light);
+}
+
+.sidebar-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  border: 3px solid var(--hover-light);
+}
+
+.sidebar-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar-username {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.sidebar-name {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.sidebar-introduce {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 8px 0 0 0;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.sidebar-introduce a {
+  color: #0066cc;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.sidebar-introduce a:hover {
+  color: #004c99;
+}
+
+.sidebar-menu {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px 20px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.sidebar-menu-item:last-child {
+  border-bottom: none;
+}
+
+.sidebar-menu-item i {
+  font-size: 18px;
+  color: var(--text-light);
+  margin-right: 12px;
+  width: 20px;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.sidebar-menu-item span {
+  font-size: 14px;
+  color: var(--text-dark);
+  transition: color 0.2s ease;
+}
+
+.sidebar-menu-item:hover {
+  background-color: var(--hover-light);
+}
+
+.sidebar-menu-item:hover i,
+.sidebar-menu-item:hover span {
+  color: var(--primary-green-dark);
+}
+
+.sidebar-menu-item.active {
+  background-color: var(--hover-light);
+  border-left: 3px solid var(--primary-green);
+}
+
+.sidebar-menu-item.active i,
+.sidebar-menu-item.active span {
+  color: var(--primary-green-dark);
+  font-weight: 600;
+}
+
+.sidebar-menu-item-withdraw i,
+.sidebar-menu-item-withdraw span {
+  color: #f44336;
+}
+
+.sidebar-menu-item-withdraw:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+.sidebar-menu-item-withdraw:hover i,
+.sidebar-menu-item-withdraw:hover span {
+  color: #f44336;
+}
+
+/* 컨텐츠 영역 스타일 */
+.mypage-content {
+  flex: 1;
+}
+
+.mypage-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-light);
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* 폼 스타일 */
+.profile-edit-form {
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-green);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+/* 프로필 이미지 업로드 스타일 */
+.profile-image-upload {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.profile-image-upload img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--hover-light);
+}
+
+.profile-image-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.upload-btn {
+  padding: 8px 16px;
+  background-color: var(--hover-light);
+  color: var(--primary-green-dark);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-btn:hover {
+  background-color: var(--primary-green-light);
+  color: white;
+}
+
+.upload-cancel-btn {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-cancel-btn:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  border-color: #f44336;
+}
+
+/* 토글 스위치 스타일 */
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: var(--primary-green);
+}
+
+input:checked+.slider:before {
+  transform: translateX(22px);
+}
+
+/* 알림 설정 스타일 */
+.setting-group {
+  margin-bottom: 20px;
+}
+
+.setting-group-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.setting-group-desc {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-info h3 {
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.setting-info p {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* 공개 설정 스타일 */
+.privacy-settings {
+  max-width: 600px;
+}
+
+.privacy-options {
+  margin: 20px 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.privacy-option {
+  display: flex;
+  align-items: flex-start;
+}
+
+.privacy-option input[type="radio"] {
+  margin-top: 5px;
+  margin-right: 15px;
+  cursor: pointer;
+  accent-color: var(--primary-green);
+}
+
+.privacy-option label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.option-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.option-info p {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* 게시물 그리드 레이아웃 개선 */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  min-height: 300px;
+  position: relative;
+}
+
+.grid-item {
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.grid-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover .grid-item-overlay {
+  opacity: 1;
+}
+
+.grid-item-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.grid-item .stat-item {
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+}
+
+.grid-item .stat-item i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* 빈 컨텐츠 스타일 */
+.study-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+  min-height: 300px;
+  position: relative;
+}
+
+.empty-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.empty-content .empty-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  background-color: rgba(126, 217, 87, 0.1);
+  color: var(--primary-green);
+}
+
+.empty-content h3 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.empty-content p {
+  font-size: 14px;
+  color: #999;
+}
+
+/* 회원 탈퇴 스타일 */
+.mypage-withdraw-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-light);
+}
+
+.withdraw-content {
+  max-width: 600px;
+}
+
+.withdraw-warning {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: rgba(244, 67, 54, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.withdraw-warning i {
+  font-size: 24px;
+  color: #f44336;
+}
+
+.withdraw-warning h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f44336;
+  margin: 0;
+}
+
+.withdraw-info {
+  margin-bottom: 30px;
+}
+
+.withdraw-info p {
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.withdraw-info ul {
+  padding-left: 20px;
+}
+
+.withdraw-info li {
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.withdraw-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.withdraw-button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.withdraw-button:hover {
+  background-color: #d32f2f;
+}
+
+.withdraw-confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.withdraw-confirm-modal {
+  width: 400px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.withdraw-confirm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.withdraw-confirm-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.withdraw-confirm-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.withdraw-confirm-content {
+  padding: 20px;
+}
+
+.withdraw-confirm-content p {
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.withdraw-confirm-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 20px 20px;
+}
+
+.withdraw-cancel-button {
+  padding: 8px 16px;
+  background-color: var(--hover-light);
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.withdraw-cancel-button:hover {
+  background-color: var(--border-light);
+}
+
+.withdraw-confirm-button {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.withdraw-confirm-button:hover {
+  background-color: #d32f2f;
+}
+
+/* 다크모드 스타일 */
+.dark-mode .mypage {
+  background-color: var(--dark-bg);
+}
+
+.dark-mode .sidebar-profile,
+.dark-mode .sidebar-menu,
+.dark-mode .mypage-section,
+.dark-mode .mypage-withdraw-section {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .sidebar-username,
+.dark-mode .sidebar-menu-item span,
+.dark-mode .section-title,
+.dark-mode .form-group label,
+.dark-mode .setting-info h3,
+.dark-mode .option-info h4,
+.dark-mode .setting-group-title,
+.dark-mode .empty-content h3,
+.dark-mode .withdraw-info p,
+.dark-mode .withdraw-info li,
+.dark-mode .withdraw-confirm-header h3,
+.dark-mode .withdraw-confirm-content p {
+  color: var(--hover-light);
+}
+
+.dark-mode .sidebar-name,
+.dark-mode .sidebar-menu-item i,
+.dark-mode .setting-info p,
+.dark-mode .option-info p,
+.dark-mode .setting-group-desc,
+.dark-mode .empty-content p,
+.dark-mode .empty-content {
+  color: var(--primary-green-light);
+}
+
+.dark-mode .sidebar-menu-item:hover {
+  background-color: rgba(126, 217, 87, 0.1);
+}
+
+.dark-mode .sidebar-menu-item.active {
+  background-color: rgba(126, 217, 87, 0.15);
+}
+
+.dark-mode .sidebar-menu-item-withdraw:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+.dark-mode .form-input,
+.dark-mode .form-textarea {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+  color: var(--hover-light);
+}
+
+.dark-mode .form-input::placeholder,
+.dark-mode .form-textarea::placeholder {
+  color: rgba(233, 247, 224, 0.6);
+}
+
+.dark-mode .setting-item {
+  border-color: var(--dark-border);
+}
+
+.dark-mode .profile-image-upload img {
+  border-color: var(--primary-green);
+}
+
+.dark-mode .upload-btn {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+  color: var(--primary-green-light);
+}
+
+.dark-mode .upload-btn:hover {
+  background-color: var(--primary-green-dark);
+  color: var(--hover-light);
+}
+
+.dark-mode .upload-cancel-btn {
+  color: var(--primary-green-light);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .upload-cancel-btn:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.dark-mode .grid-item {
+  border-color: var(--dark-border);
+}
+
+.dark-mode .grid-item-overlay {
+  background-color: rgba(126, 217, 87, 0.3);
+}
+
+.dark-mode .withdraw-warning {
+  background-color: rgba(244, 67, 54, 0.2);
+}
+
+.dark-mode .withdraw-confirm-modal {
+  background-color: var(--dark-element);
+  border: 1px solid var(--dark-border);
+}
+
+.dark-mode .withdraw-confirm-header {
+  border-color: var(--dark-border);
+}
+
+.dark-mode .withdraw-confirm-close {
+  color: var(--primary-green-light);
+}
+
+.dark-mode .withdraw-cancel-button {
+  background-color: var(--dark-border);
+  color: var(--hover-light);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .withdraw-cancel-button:hover {
+  background-color: var(--dark-element);
+  border-color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+  .mypage-container {
+    flex-direction: column;
+  }
+
+  .mypage-sidebar {
+    width: 100%;
+  }
+
+  .sidebar-profile {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 15px;
+  }
+
+  .sidebar-avatar {
+    margin: 0 15px 0 0;
+    width: 60px;
+    height: 60px;
+  }
+
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mypage-section {
+    padding: 20px 15px;
+  }
+
+  .profile-image-upload {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-image-upload img {
+    margin-bottom: 15px;
+  }
+}
+
+/* 마이페이지에 학습 게시물 표시 스타일 추가 */
+.mypage .study-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.mypage .study-post-card {
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-light);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.mypage .study-post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(126, 217, 87, 0.2);
+  border-color: var(--primary-green-light);
+}
+
+.mypage .study-post-image {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.mypage .study-post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mypage .study-post-card:hover .study-post-image img {
+  transform: scale(1.05);
+}
+
+.mypage .study-post-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mypage .study-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.mypage .study-post-tag {
+  color: var(--primary-green-dark);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mypage .study-post-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.mypage .study-post-excerpt {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 16px;
+  line-height: 1.4;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.mypage .study-post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mypage .study-post-author {
+  display: flex;
+  align-items: center;
+}
+
+.mypage .study-post-author img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid var(--border-light);
+}
+
+.mypage .study-post-author span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.mypage .study-post-date {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* 다크모드 스타일 */
+.dark-mode .mypage .study-post-card {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .mypage .study-post-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary-green);
+}
+
+.dark-mode .mypage .study-post-tag {
+  color: var(--primary-green);
+}
+
+.dark-mode .mypage .study-post-title,
+.dark-mode .mypage .study-post-author span {
+  color: var(--hover-light);
+}
+
+.dark-mode .mypage .study-post-excerpt,
+.dark-mode .mypage .study-post-date {
+  color: var(--primary-green-light);
+}
+
+.dark-mode .mypage .study-post-author img {
+  border-color: var(--dark-border);
+}
+
+/* 반응형 스타일 */
+@media (max-width: 900px) {
+  .mypage .study-post-card {
+    flex-direction: column;
+  }
+
+  .mypage .study-post-image {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/* 다크모드에서의 empty-content 스타일 */
+.dark-mode .empty-content .empty-icon {
+  background-color: rgba(126, 217, 87, 0.15);
+  color: var(--primary-green-light);
+}
+
+.dark-mode .empty-content h3 {
+  color: var(--hover-light);
+}
+
+.dark-mode .empty-content p {
+  color: var(--primary-green-light);
+}

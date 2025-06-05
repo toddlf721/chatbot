@@ -1,0 +1,266 @@
+/* 검색창 컨테이너 스타일 */
+.navbar-search-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* 기존 검색창 스타일 */
+  .navbar-search {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 0 10px;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s ease;
+  }
+  
+  /* 태그 모드일 때 검색창 스타일 */
+  .navbar-search.tag-mode {
+    background-color: #f0f8ff;
+    border-color: #b8daff;
+  }
+  
+  .navbar-search input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .search-icon {
+    color: #666;
+    font-size: 16px;
+  }
+  
+  /* 태그 모드 검색 아이콘 색상 */
+  .navbar-search.tag-mode .search-icon {
+    color: #0095f6;
+  }
+  
+  /* 드롭다운 스타일 */
+  .search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 2px;
+  }
+  
+  .search-results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  /* 검색 결과 항목 스타일 */
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .search-result-item:last-child {
+    border-bottom: none;
+  }
+  
+  .search-result-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* 프로필 이미지 (동그란 형태) */
+  .search-result-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  
+  .search-result-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* 사용자 정보 */
+  .search-result-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 사용자 닉네임 (볼드 처리) */
+  .search-result-username {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* 사용자 이름 */
+  .search-result-fullname {
+    font-size: 13px;
+    color: #8e8e8e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* 태그 검색 결과 스타일 */
+  .search-result-item.tag-result {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-result-tag {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .search-result-tag i {
+    font-size: 18px;
+    color: #0095f6;
+    margin-right: 12px;
+    min-width: 18px;
+  }
+  
+  .tag-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .tag-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .tag-count {
+    font-size: 12px;
+    color: #8e8e8e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* 로딩 상태 */
+  .search-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: #8e8e8e;
+  }
+  
+  .search-loading i {
+    margin-right: 8px;
+  }
+  
+  /* 검색 결과 없음 */
+  .search-no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 15px;
+    color: #8e8e8e;
+    text-align: center;
+  }
+  
+  .search-no-results i {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  
+  /* 태그 결과 없음 아이콘 */
+  .search-no-results i.fa-hashtag {
+    color: #0095f6;
+  }
+  
+  /* 다크 모드 지원 */
+  .dark-mode .navbar-search {
+    background-color: #333;
+    border-color: #444;
+  }
+  
+  .dark-mode .navbar-search input {
+    color: #f5f5f5;
+  }
+  
+  .dark-mode .search-icon {
+    color: #aaa;
+  }
+  
+  /* 다크 모드에서 태그 모드 스타일 */
+  .dark-mode .navbar-search.tag-mode {
+    background-color: #1a3a5e;
+    border-color: #2a5a8e;
+  }
+  
+  .dark-mode .navbar-search.tag-mode .search-icon {
+    color: #1da1f2;
+  }
+  
+  .dark-mode .search-dropdown {
+    background-color: #333;
+    border-color: #444;
+  }
+  
+  .dark-mode .search-result-item {
+    border-color: #444;
+  }
+  
+  .dark-mode .search-result-item:hover {
+    background-color: #444;
+  }
+  
+  .dark-mode .search-result-username {
+    color: #f5f5f5;
+  }
+  
+  .dark-mode .search-result-fullname {
+    color: #aaa;
+  }
+  
+  /* 다크 모드에서 태그 검색 결과 스타일 */
+  .dark-mode .search-result-tag i {
+    color: #1da1f2;
+  }
+  
+  .dark-mode .tag-name {
+    color: #f5f5f5;
+  }
+  
+  .dark-mode .tag-count {
+    color: #aaa;
+  }
+  
+  .dark-mode .search-no-results i.fa-hashtag {
+    color: #1da1f2;
+  }

@@ -1,0 +1,485 @@
+     * {
+       box-sizing: border-box;
+     }
+
+     /* ===================== 다크모드 ===================== */
+     .dark-mode {
+       background-color: #121212;
+       color: #f0f0f0;
+     }
+
+     .dark-mode .main-container {
+       background-color: transparent;
+     }
+
+     .dark-mode .login-container,
+     .dark-mode .login-slide-container {
+       background-color: rgba(30, 30, 30, 0.85);
+       border: 2.6px solid #555;
+       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+     }
+
+     .dark-mode .input-group input {
+       background-color: #2a2a2a;
+       color: #e0e0e0;
+       border: 1px solid #555;
+       box-shadow: inset 12px 2px 12px rgba(0, 0, 0, 0.3);
+     }
+
+     .dark-mode .login-btn,
+     .dark-mode .login-btn-google,
+     .dark-mode .login-btn-kakao,
+     .dark-mode .login-btn-naver {
+       background-color: #2c2c2c;
+       color: #e0e0e0;
+       border: 1px solid #666;
+       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+     }
+
+     .dark-mode .login-btn:hover {
+       background-color: #3a3a3a;
+     }
+
+     .dark-mode .login-btn-google:hover {
+       background-color: #8a1f17;
+     }
+
+     .dark-mode .login-btn-kakao:hover {
+       background-color: #bba300;
+     }
+
+     .dark-mode .login-btn-naver:hover {
+       background-color: #02713a;
+     }
+
+     .dark-mode .forgot-password a,
+     .dark-mode .new-register a,
+     .dark-mode .login-company a,
+     .dark-mode .social-divider span {
+       color: #e0e0e0;
+     }
+
+     .dark-mode .social-divider::before,
+     .dark-mode .social-divider::after {
+       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+     }
+
+     .dark-mode .logo-subtext {
+       color: #dddddd;
+     }
+
+
+     /*글꼴, 배경색, 화면 전체 높이, 기본여백설정*/
+     html, body {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+     }
+
+     body {
+       font-family: Pretendard-Regular, sans-serif;
+     }
+
+     .overlay {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       /* backdrop-filter: blur(18px); */
+       /* background: rgba(0, 0, 0, 0.4); */
+       z-index: 1;
+     }
+
+     .main-container {
+       display: flex;
+       flex-direction: row;
+       justify-content: center;
+       align-items: center;
+       gap: 40px;
+       width: 100%;
+       height: calc(100vh - 60px); /* Navbar 높이(60px)를 제외한 높이 */
+       padding: 20px;
+       box-sizing: border-box;
+       position: relative;
+       z-index: 2;
+     }
+
+     @media (max-width: 768px) {
+       .main-container {
+         flex-direction: column;
+         padding: 10px;
+       }
+
+       .login-container {
+         width: 95%;
+         padding: 20px;
+       }
+     }
+
+     /*로그인 컨테이너(로그인 박스 인터페이스)*/
+     .login-container {
+       background: rgba(255, 255, 255, 0.25);
+       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0);
+       backdrop-filter: blur(16px) saturate(180%);
+       /* background-color: rgba(17, 25, 40, 0.75); */
+       background-color: #f6f6f6;
+       -webkit-backdrop-filter: blur(4px);
+       border-radius: 12px;
+       /* border: 1px solid rgba(255, 255, 255, 0.125); */
+       border: 1px solid #7ed957;
+       padding: 30px;
+       width: 90%;
+       max-width: 400px;
+       transform: none;
+       z-index: 1;
+       margin: auto;
+     }
+
+
+     .login-slide-container {
+       background: rgba(255, 255, 255, 0.25);
+       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0);
+       backdrop-filter: blur(16px) saturate(180%);
+       /* background-color: rgba(17, 25, 40, 0.75); */
+       background-color: #f6f6f6;
+       -webkit-backdrop-filter: blur(4px);
+       border-radius: 12px;
+       /* border: 1px solid rgba(255, 255, 255, 0.125); */
+       border: 2.6px solid #c3e0ff;
+       padding: 30px;
+       width: 90%;
+       max-width: 900px;
+       max-height: 670px;
+       height: auto;
+       min-height: 670px;
+       /*aspect-ratio: 4 / 5; /* 비율 고정: 넓이 기준 높이 자동 계산 */
+       z-index: 1;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       overflow: hidden;
+     }
+
+     .slide-arrow {
+       position: absolute;
+       top: 50%;
+       transform: translateY(-50%);
+       background-color: rgba(0, 0, 0, 0.3);
+       color: white;
+       border: none;
+       padding: 10px 15px;
+       font-size: 20px;
+       cursor: pointer;
+       z-index: 2;
+       border-radius: 8px;
+       backdrop-filter: blur(4px);
+     }
+
+     .slide-arrow.left {
+       left: 8px;
+
+     }
+
+     .slide-arrow.right {
+       right: 8px;
+     }
+
+     .logo-subtext {
+       color: #000000;
+       font-size: 32px;
+       margin-top: 8px;
+       /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+       opacity: 0.8;
+     }
+
+     /*로그인 제목 스타일*/
+     .login-container h2 {
+       text-align: center;
+       margin-bottom: 20px;
+       font-size: 24px;
+       color: #ffffff;
+       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+     }
+
+     /*로그인 정보 입력 필드의 여백*/
+     .input-group {
+       margin-bottom: 15px;
+       display: flex;
+       justify-content: center;
+     }
+
+     /*아이디/비밀번호 글자 설정*/
+     .input-group label {
+       font-size: 14px;
+       margin-bottom: 5px;
+       display: block;
+       color: #BBBBBB;
+       /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); */
+     }
+
+     /* 아이디 비밀번호 입력 칸 */
+     .input-group input {
+       background-color: #ececec;
+       width: 100%;
+       max-width: 100%;
+       padding: 12px;
+       text-align: left;
+       /* border-radius: 16px; */
+       border-radius: 8px;
+       font-size: 16px;
+       color: #000000;
+       /* background: rgba(0, 0, 0, 0.20); */
+       /* border: 1px solid rgba(255, 255, 255, 0.3); */
+       border: 2px solid rgba(255, 255, 255, 0.3);
+       /* backdrop-filter: blur(12px); */
+       /* -webkit-backdrop-filter: blur(4px); */
+       transition: all 0.3s ease;
+
+       box-shadow:
+         /* inset 1px 1px 1px #ffffff,
+          inset -2px -2px 6px rgba(0, 0, 0, 0.1), */
+         /* inset 12px 2px 12px #747474, */
+         inset 12px 2px 12px rgba(0, 0, 0, 0.1),
+         /* 0 4px 30px rgba(0, 0, 0, 0.05); */
+
+         /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+     }
+
+     /*입력창 클릭시 효과*/
+     .input-group input:focus {
+       color: #5c5c5c;
+       outline: none;
+       transition: all 0.3s ease;
+     }
+
+     /*로그인 버튼 스타일*/
+     .login-btn {
+       width: 100%;
+       padding: 10px;
+       /* margin-top: 10px; */
+       color: #000000;
+       font-size: 16px;
+       cursor: pointer;
+       border-radius: 8px;
+       background: rgba(255, 255, 255, 0.2);
+       border: 2px solid rgba(255, 255, 255, 0.3);
+       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+       /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+       /* backdrop-filter: blur(12px); */
+       /* -webkit-backdrop-filter: blur(4px); */
+       transition: all 0.3s ease;
+       /* background-color: #c23321; */
+     }
+
+     /*마우스 올렸을 때 인터렉션 효과*/
+     .login-btn:hover {
+       background-color: #c3e0ff;
+     }
+
+     /*비밀번호 찾기 텍스트 정렬*/
+     .forgot-password {
+       text-align: center;
+       margin-top: 10px;
+       padding-top: 20px;
+     }
+
+     /*회원가입입 텍스트 정렬*/
+     .new-register {
+       text-align: center;
+       margin-top: 10px;
+       padding-top: 20px;
+     }
+
+     /*기업으로 로그인*/
+     .login-company {
+       text-align: center;
+       margin-top: 10px;
+       padding-top: 20px;
+     }
+
+     /* .forgot-password:hover {
+        background-color: #0056b3
+     } */
+
+     /*비밀번호 찾기 글자 색, 그림자 설정*/
+     .forgot-password a {
+       color: #000000;
+       font-size: 16px;
+       text-decoration: underline;  
+       /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); */
+       margin-bottom: 4px;
+     }
+
+     /*회원가입 글자 색, 그림자 설정*/
+     .new-register a {
+       color: #804EFF;
+       font-size: 16px;
+       text-decoration: underline;
+       /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); */
+       margin-bottom: 4px;
+     }
+
+     /* 기업으로 로그인 글자 색, 그림자 설정 */
+     .login-company a {
+       color: #000000;
+       font-size: 16px;
+       text-decoration: underline;
+       /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); */
+       margin-top: 4px;
+     }
+
+     /*!*소셜 로그인 버튼*!*/
+     /*!*사이즈 정의*!*/
+     /*.login-btn-google,*/
+     /*.login-btn-kakao,*/
+     /*.login-btn-naver {*/
+     /*    width: 100%;*/
+     /*    padding: 10px;*/
+     /*    margin-top: 10px;*/
+     /*    border: none;*/
+     /*    border-radius: 8px;*/
+     /*    font-size: 16px;*/
+     /*    cursor: pointer;*/
+     /*    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);*/
+     /*    color: white;*/
+     /*}*/
+
+     /*구글 로그인 버튼*/
+     .login-btn-google {
+       width: 100%;
+       padding: 10px;
+       margin-top: 10px;
+       color: #000000;
+       font-size: 16px;
+       cursor: pointer;
+       border-radius: 32px;
+       background: rgba(255, 255, 255, 0.2);
+       border: 1px solid rgba(255, 255, 255, 0.3);
+       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+       /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+       /* backdrop-filter: blur(12px); */
+       /* -webkit-backdrop-filter: blur(4px); */
+       transition: all 0.3s ease;
+       /* background-color: #c23321; */
+     }
+
+
+     /*카카오 로그인 버튼*/
+     .login-btn-kakao {
+       width: 100%;
+       padding: 10px;
+       margin-top: 10px;
+       color: #000000;
+       font-size: 16px;
+       cursor: pointer;
+       border-radius: 32px;
+       background: rgba(255, 255, 255, 0.2);
+       border: 1px solid rgba(255, 255, 255, 0.3);
+       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+       /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+       /* backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(4px); */
+       transition: all 0.3s ease;
+       /* background-color: #e4c800; */
+     }
+
+
+     /*네이버 로그인 버튼*/
+     .login-btn-naver {
+       width: 100%;
+       padding: 10px;
+       margin-top: 10px;
+       color: #000000;
+       font-size: 16px;
+       cursor: pointer;
+       border-radius: 32px;
+       background: rgba(255, 255, 255, 0.2);
+       border: 1px solid rgba(255, 255, 255, 0.3);
+       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+       /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+       /* backdrop-filter: blur(12px); */
+       /* -webkit-backdrop-filter: blur(4px); */
+       transition: all 0.3s ease;
+       /* background-color: #029e47; */
+     }
+
+
+     /*구글 로그인 버튼 위에 마우스를 가져다 댈 경우 나타나는 효과 설정*/
+     .login-btn-google:hover {
+       background-color: #c23321;
+     }
+
+     /*카카오 로그인 버튼 위에 마우스를 가져다 댈 경우 나타나는 효과 설정*/
+     .login-btn-kakao:hover {
+       background-color: #e4c800;
+     }
+
+     /*네이버 로그인 버튼 위에 마우스를 가져다 댈 경우 나타나는 효과 설정*/
+     .login-btn-naver:hover {
+       background-color: #029e47;
+     }
+
+     .social-divider {
+       display: flex;
+       align-items: center;
+       color: #ffffff;
+       font-size: 14px;
+       text-align: center;
+       margin: 20px 0;
+     }
+
+     .social-divider span {
+       color: #000000;
+       font-size: 14px;
+       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+     }
+
+     .social-divider::before,
+     .social-divider::after {
+       content: '';
+       flex: 1;
+       border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+       /* 💫 연한 선 */
+       margin: 0 10px;
+     }
+
+     .login-slide-divider {
+       display: flex;
+       align-items: center;
+       color: #ffffff;
+       font-size: 14px;
+       text-align: center;
+       /* margin: 16px 16px; */
+     }
+
+     .login-slide-divider span {
+       color: #ffffff;
+       font-size: 14px;
+       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+     }
+
+     .login-slide-divider::before,
+     .login-slide-divider::after {
+       content: '';
+       flex: 1;
+       /* margin: 10px; */
+     }
+
+     .login-slide-image {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       border-radius: inherit;
+     }
+
+
+     .login-slide-image.active {
+       opacity: 1;
+       z-index: 1;
+     }
+
+     .auth-page {
+       height: 100%;
+       overflow: hidden;
+     }

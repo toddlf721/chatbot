@@ -1,0 +1,303 @@
+.sidebar {
+  width: 100%;
+}
+
+.sidebar-section {
+  background-color: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.sidebar-section:hover {
+  box-shadow: 0 4px 12px rgba(126, 217, 87, 0.15);
+}
+
+.sidebar-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.sidebar-search {
+  margin-bottom: 16px;
+}
+
+.sidebar-search-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.sidebar-search-input:focus {
+  border-color: var(--primary-green);
+}
+
+.suggested-users-container {
+  height: 300px;
+  min-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-green-light) var(--hover-light);
+}
+
+.suggested-users-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggested-users-container::-webkit-scrollbar-track {
+  background: var(--hover-light);
+  border-radius: 4px;
+}
+
+.suggested-users-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary-green-light);
+  border-radius: 4px;
+}
+
+.suggested-users {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.suggested-user {
+  display: flex;
+  align-items: center;
+}
+
+.suggested-user-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+  border: 2px solid var(--hover-light);
+}
+
+.suggested-user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.suggested-user-info {
+  flex: 1;
+}
+
+.suggested-username {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.suggested-username:hover {
+  color: var(--primary-green-dark);
+}
+
+.suggested-fullname {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.follow-status {
+  background-color: var(--hover-light);
+  color: var(--primary-green-dark);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.follow-button {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+  text-align: center;
+}
+
+.follow-button:hover {
+  background-color: var(--primary-green-dark);
+}
+
+.follow-button.following {
+  background-color: var(--hover-light);
+  color: var(--primary-green-dark);
+  border: 1px solid var(--primary-green-light);
+}
+
+.follow-button.following:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  border-color: #f44336;
+}
+
+.sidebar-question {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* 다크모드 스타일 */
+.dark-mode .sidebar-section {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .sidebar-title,
+.dark-mode .suggested-username {
+  color: var(--hover-light);
+}
+
+.dark-mode .sidebar-search-input {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+  color: var(--hover-light);
+}
+
+.dark-mode .sidebar-search-input::placeholder {
+  color: rgba(233, 247, 224, 0.6);
+}
+
+.dark-mode .sidebar-search-input:focus {
+  border-color: var(--primary-green);
+}
+
+.dark-mode .suggested-fullname,
+.dark-mode .sidebar-question {
+  color: var(--primary-green-light);
+}
+
+.dark-mode .suggested-user-avatar {
+  border-color: var(--dark-border);
+}
+
+.dark-mode .follow-button.following {
+  background-color: rgba(126, 217, 87, 0.15);
+  color: var(--primary-green-light);
+  border-color: var(--primary-green);
+}
+
+.dark-mode .follow-button.following:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.dark-mode .follow-status {
+  background-color: rgba(126, 217, 87, 0.15);
+  color: var(--primary-green-light);
+}
+
+.dark-mode .suggested-users-container::-webkit-scrollbar-track {
+  background: var(--dark-border);
+}
+
+.dark-mode .suggested-users-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary-green);
+}
+
+/* 제목 탭 스타일 */
+.sidebar-title-tabs {
+  display: flex;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.sidebar-title {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 0;
+}
+
+.sidebar-title.active {
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--primary-green);
+}
+
+/* 마우스 호버 효과 */
+.sidebar-title:hover {
+  color: var(--primary-green);
+}
+
+/* 다크모드 스타일 */
+.dark-mode .sidebar-title-tabs {
+  border-bottom-color: var(--dark-border);
+}
+
+.dark-mode .sidebar-title {
+  color: var(--primary-green-light);
+}
+
+.dark-mode .sidebar-title.active {
+  color: var(--hover-light);
+  border-bottom-color: var(--primary-green);
+}
+
+.dark-mode .sidebar-title:hover {
+  color: var(--primary-green);
+}
+
+/* 팔로우 상태 라벨 수정 */
+.follow-status {
+  background-color: var(--hover-light);
+  color: var(--primary-green-dark);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* 로딩 상태 */
+.sidebar-loading {
+  text-align: center;
+  padding: 20px 0;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.dark-mode .sidebar-loading {
+  color: var(--primary-green-light);
+}
+
+/* 검색 결과 없음 상태 */
+.sidebar-no-results {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.dark-mode .sidebar-no-results {
+  color: var(--primary-green-light);
+}

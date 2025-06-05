@@ -1,0 +1,48 @@
+.admin-sidebar {
+  width: 200px;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+.admin-sidebar-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+.admin-sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-sidebar-menu li {
+  margin-bottom: 1rem;
+}
+
+.admin-sidebar-menu li a {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* hover 시 스타일 */
+.admin-sidebar-menu li a:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* 현재 선택된 메뉴 */
+.admin-sidebar-menu li .active {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}

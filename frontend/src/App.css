@@ -1,0 +1,245 @@
+/* 연두색 테마 변수 */
+:root {
+  --primary-green: #7ed957;
+  --primary-green-dark: #4caf50;
+  --primary-green-light: #a6df87;
+  --background-light: #f0f8eb;
+  --border-light: #d4e9c5;
+  --hover-light: #e9f7e0;
+  
+  --dark-bg: #1e2a23;
+  --dark-element: #2a3a30;
+  --dark-border: #3d5a43;
+  
+  --text-dark: #333;
+  --text-light: #666;
+  --text-white: #fff;
+}
+
+.app {
+  min-height: 100vh;
+  min-width: 400px; /* 모바일 화면 기준 최소 너비 */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-container {
+  margin-top: 60px;
+  flex: 1;
+}
+
+/* 공통 스타일 */
+.btn-primary {
+  background-color: var(--primary-green);
+  color: var(--text-white);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-green-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-green);
+  border: 1px solid var(--primary-green);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: var(--hover-light);
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* 다크모드 스타일 */
+.app.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--hover-light);
+}
+
+.dark-mode .card {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+}
+
+.dark-mode .btn-outline {
+  color: var(--primary-green-light);
+  border-color: var(--primary-green-light);
+}
+
+.dark-mode .btn-outline:hover {
+  background-color: rgba(126, 217, 87, 0.1);
+}
+
+.dark-mode input, 
+.dark-mode textarea {
+  background-color: var(--dark-element);
+  border-color: var(--dark-border);
+  color: var(--hover-light);
+}
+
+.dark-mode input::placeholder, 
+.dark-mode textarea::placeholder {
+  color: rgba(233, 247, 224, 0.6);
+}
+
+/* 컨테이너 스타일 */
+.main-container {
+  max-width: 975px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.two-column-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.main-column {
+  flex: 1;
+}
+
+.side-column {
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .two-column-layout {
+    flex-direction: column;
+  }
+  
+  .side-column {
+    width: 100%;
+  }
+}
+
+/* 로그인/회원가입 페이지 네비게이션 스타일 */
+.navbar .auth-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #f0f8eb;
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-left: 10px;
+  border: 1px solid #7ed957;
+  cursor: pointer;
+}
+
+.navbar .auth-button:hover {
+  background-color: #e9f7e0;
+  transform: translateY(-1px);
+}
+
+.navbar .auth-button.active {
+  background-color: #7ed957;
+  color: white;
+  border: 1px solid #7ed957;
+}
+
+.navbar.dark-mode .auth-button {
+  background-color: #2a3a30;
+  color: #a6df87;
+  border: 1px solid #7ed957;
+}
+
+.navbar.dark-mode .auth-button:hover {
+  background-color: #3d5a43;
+}
+
+.navbar.dark-mode .auth-button.active {
+  background-color: #7ed957;
+  color: white;
+  border: 1px solid #7ed957;
+}
+
+/* 네비게이션 컨테이너 스타일 수정 */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 975px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/*로딩중 수정*/
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 화면 중앙 배치 */
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #4a90e2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+.loading-text {
+  font-size: 18px;
+  color: #333;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 18px;
+  color: #333;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-video {
+  width: 60vw;             /* 화면 너비의 60%까지 키움 */
+  max-width: 600px;        /* 최대 너비 제한 (더 커지지 않게) */
+  min-width: 300px;        /* 최소 너비 보장 (작은 화면에서도 큼직하게) */
+  height: auto;            /* 비율 유지 */
+  margin-bottom: 10px;
+}

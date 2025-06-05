@@ -1,0 +1,43 @@
+.home {
+    width: 100%;
+  }
+  
+  .home-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+  }
+  
+  .home-feed {
+    flex: 1;
+    max-width: 600px;
+    margin-right: 28px;
+  }
+  
+  .home-sidebar {
+    width: 320px;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+  }
+  
+  @media (max-width: 935px) {
+    .home-sidebar {
+      display: none;
+    }
+    
+    .home-feed {
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .home-container {
+      padding: 0;
+    }
+    
+    .home-feed {
+      max-width: 100%;
+    }
+  }

@@ -1,0 +1,9 @@
+Main Color: #804EFF
+
+Dark BG Color: #1B1B1B
+Dark Primary Color: #252525
+Dark Second Color: #1D1D1D
+
+Light BG Color: #E6E6E6
+Light Primary Color: #D9D9D9
+Light Second Color: #E8E8E8
